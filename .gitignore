@@ -1,0 +1,24 @@
+# general temporary files
+*~
+*.pyc
+*.pyo
+*.orig
+*.rej
+*.sublime-*
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# editors
+eclipse/
+.idea/
+.vscode/
+.project
+.settings/
+.pydevproject
+*.iml
+
+
+# Byte-compiled
+__pycache__/
