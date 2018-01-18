@@ -119,9 +119,9 @@ class Deck(object):
         :return:
         """
         import sqlite3 as lite
-        from backend import DECKS_DB_PATH
+        from backend import DB_PATH
 
-        db = lite.connect(DECKS_DB_PATH)
+        db = lite.connect(DB_PATH)
         with db:
             db_cursor = db.cursor()
 

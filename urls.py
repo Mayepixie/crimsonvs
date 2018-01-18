@@ -22,6 +22,8 @@ app_name = 'crimsonvs'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
-    url(r'^card/(?P<card_id>[0-9]+)/$', views.card, name='card'),
-    url(r'^gallery', views.gallery, name='gallery'),
+    url(r'^(?P<user_id>[0-9]+)/deck/$', views.decks, name='decks'),
+    url(r'^(?P<user_id>[0-9]+)/deck/(?P<deck_id>[0-9]+)/$', views.deck, name='deck'),
+    url(r'^(?P<user_id>[0-9]+)/gallery/$', views.gallery, name='gallery'),
+    url(r'^(?P<user_id>[0-9]+)/gallery/card/(?P<card_id>[0-9]+)/$', views.card, name='card'),
 ]

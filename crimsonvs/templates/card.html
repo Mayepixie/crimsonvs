@@ -1,1 +1,20 @@
-{{ card }}
+<ul>
+    <li>{{ card.name }}</li>
+    <li><p>Number: {{ card.id }}</p></li>
+    <li><p>Trinity: {{ card.trinity }}</p></li>
+    {% if not card.junction == '0' %}
+        <li><p>Junction: {{ card.junction }}</p></li>
+        <li><p>Junction Description: {{ card.junction_description }}</p></li>
+    {% endif %}
+    {% if not card.charisma == 0 %}
+        <li><p>Charisma: {{ card.charisma }}</p></li>
+        <li><p>HP: {{ card.hp }}</p></li>
+        <li><p>AP: {{ card.ap }}</p></li>
+    {% else %}
+        <li><p>Cost: {{ card.cost }}</p></li>
+        {% if not card.characters == '0' %}
+            <li><p>Characters featured on the card: {{ card.characters }}</p></li>
+        {% endif %}
+    {% endif %}
+    <li>{{ card.rarity }}</li>
+</ul>

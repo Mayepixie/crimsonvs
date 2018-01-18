@@ -3,7 +3,6 @@ from sqlite3 import Error as LiteError
 
 
 class CardLoader:
-    DB_PATH = 'data/cards.db'
 
     CARD_QUERY = "SELECT * FROM cards WHERE card_id IS '{}'"
     # CARDS_QUERY = "SELECT * FROM cards WHERE card_ID in '({})'"
@@ -58,8 +57,9 @@ class CardLoader:
 
     @staticmethod
     def _get_from_db_by_query(query):
-        from backend import DECKS_DB_PATH
-        db = lite.connect(DECKS_DB_PATH)
+        from backend import DB_PATH
+
+        db = lite.connect(DB_PATH)
         with db:
             db_cursor = db.cursor()
 

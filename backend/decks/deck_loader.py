@@ -3,10 +3,8 @@ import sqlite3 as lite
 
 class DeckLoader:
 
-    DB_PATH = 'data/decks.db'
-
-    DECK_ID_QUERY = "SELECT * FROM deck WHERE deck_id IS '{}'"
-    USER_ID_QUERY = "SELECT * FROM deck WHERE user_id IS '{}'"
+    #DECK_ID_QUERY = "SELECT * FROM deck WHERE deck_id IS '{}'"
+    #USER_ID_QUERY = "SELECT * FROM deck WHERE user_id IS '{}'"
 
     @classmethod
     def by_id(cls, deck_id):
@@ -31,15 +29,16 @@ class DeckLoader:
         @type user_id: int
 
         @returns: Deck Object
-        @returntype: decks.Deck
+        @return type: decks.Deck
         """
         cls._validate_id(user_id)
         return cls._get_deck(cls.USER_ID_QUERY, user_id)
 
     @staticmethod
     def _get_from_db_by_query(query):
-        from backend import DECKS_DB_PATH
-        db = lite.connect(DECKS_DB_PATH)
+        from backend import DB_PATH
+
+        db = lite.connect(DB_PATH)
         with db:
             db_cursor = db.cursor()
 
